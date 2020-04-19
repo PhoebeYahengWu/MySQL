@@ -9,7 +9,7 @@
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Playfair+Display:700,400,900,400italic,700italic,900italic|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Anonymous+Pro:400,700,400italic,700italic|Roboto:400,700' />
     <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css' />
     <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' />
-  
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -36,7 +36,6 @@
         <div class="row justify-content-center">
            
         <div class="col-md-6 sql">
-            <h3>MySQL</h3>
 <pre>
 
     <span class="colored">DROP DATABASE IF EXISTS</span> company_db;
@@ -55,7 +54,6 @@
 
     <div class="row justify-content-center">
         <div class="col-md-6 sql">
-            <h3>MySQL</h3>
 <pre>        
     <span class="colored">CREATE TABLE </span>customer(
     Customer_ID <span class="colored">INT(10) AUTO_INCREMENT NOT NULL</span>,
@@ -76,7 +74,6 @@
 
     <div class="row justify-content-center">
         <div class="col-md-6 sql">
-            <h3>MySQL</h3>
 <pre>
               
     <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
@@ -94,7 +91,6 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque consequatur illum reiciendis error, odio nostrum nulla deserunt, pariatur id, possimus magnam repudiandae distinctio! Eius, non!</p>
         <div class="row justify-content-center">
             <div class="col-md-6 sql">
-                <h3>MySQL</h3>
 <pre>
                   
     <span class="colored">SELECT * FROM</span> customer;
@@ -116,10 +112,9 @@
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-        <h3>Node.js</h3>
 <pre>
           
-    <span class="colored">npm init --y</span>
+    npm init --y
 
 </pre>
     
@@ -129,10 +124,9 @@
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-        <h3>Node.js</h3>
 <pre>
           
-    <span class="colored">npm i mysql</span>
+   npm i mysql
 
 </pre>
     
@@ -144,10 +138,8 @@
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-        <h3>Node.js</h3>
-<pre>
-          
-    <span class="colored">const mysql = require("mysql");
+<pre><code class="javascript">         
+    const mysql = require("mysql");
     const connection = mysql.createConnection({
           host: "localhost",
           port: 3306,
@@ -160,8 +152,8 @@
             if (err) throw err;
             console.log(res);
         });      
-    connection.end();</span>
-
+    connection.end();
+</code>
 </pre>
     
     </div>
@@ -171,9 +163,8 @@
 
     <div class="row justify-content-center">
         <div class="col-md-6 node">
-            <h3>Node.js</h3>
 <pre>          
-    <span class="colored">node app</span> 
+    node app.js
 
 </pre>
         
@@ -220,7 +211,8 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
     <!-- Print friendly -->
     <script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if ('https:' === document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <script src="script.js"></script>
 </body>
 </html>
