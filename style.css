@@ -116,9 +116,19 @@ body {
   pre {
       margin: 0;
       padding: 0;
+      font-size: 75% !important;
       overflow: hidden !important;
-      background-color: #FCF6EE;
   }
+
+
+  .sql {
+    background-color: #FCF6EE;
+  }
+
+  .node {
+    background-color: #f0f0f0;
+  }
+
 
   @media only screen and (max-width: 768px) {
     pre {
