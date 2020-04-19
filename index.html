@@ -33,128 +33,90 @@
         <div id="content">
 
        <p>If you’ve arrived here looking for a quick way to get up and running with MySQL in Node.js, I’ve got you covered! The first thing is to create a database and a database table to work with in MySQL workbench.</p>
-        <div class="row justify-content-center">
-           
-        <div class="col-md-6 sql">
-<pre><code>
-    DROP DATABASE IF EXISTS company_db;
-    CREATE DATABASE company_db;
-    USE company_db;
-</code>
-</pre>  
-    
-        
-        </div>
-        </div>
-  
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores laborum minima harum, suscipit pariatur dolorum praesentium eos delectus possimus sapiente accusantium tenetur perferendis, veritatis quibusdam reiciendis facere quidem optio nisi eligendi, quas debitis! Eligendi doloremque maxime necessitatibus ducimus rem odio unde vel reiciendis. Ab iusto, unde voluptas veniam neque dolorem.</p>
- 
- 
-
-    <div class="row justify-content-center">
-        <div class="col-md-6 sql">
-<pre><code>
-    CREATE TABLE customer(
+       <div class="row justify-content-center">
+        <div class="col-md-6">
+<pre><code>DROP DATABASE IF EXISTS company_db;
+CREATE DATABASE company_db;
+USE company_db;<hr>CREATE TABLE customer(
     Customer_ID INT(10) AUTO_INCREMENT NOT NULL,
     Customer_Name VARCHAR(50) NOT NULL,
     Customer_City VARCHAR(25),
     Customer_State VARCHAR(5),
     PRIMARY KEY (Customer_ID)
-    );</code> 
-</pre>
-            
+);<hr>INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
+VALUES ("Daisy Hamilton", "Albany", "NY");
+INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
+VALUES ("Juan Stone", "New York", "NY");            
+INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
+VALUES ("Celia Byrd", "Chicago", "IL");<hr>SELECT * FROM customer;</code></pre>
         </div>
         </div>
- 
-   
-   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet unde obcaecati animi beatae, voluptatem error iure eius similique minus quisquam, est fugit incidunt quam dicta voluptatum ipsum. Enim voluptas accusantium repellendus tempora, perspiciatis delectus cupiditate atque iusto. Temporibus non possimus placeat minima, inventore ducimus. Placeat nostrum enim accusamus? Nisi, maiores!</p>
-   
+       
 
-    <div class="row justify-content-center">
-        <div class="col-md-6 sql">
-<pre><code>             
-    INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
-    VALUES ("Daisy Hamilton", "Albany", "NY"); 
-    INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
-    VALUES ("Juan Stone", "New York", "NY");
-    INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
-    VALUES ("Celia Byrd", "Chicago", "IL");
-</code></pre>
         
-        </div>
-        </div>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque consequatur illum reiciendis error, odio nostrum nulla deserunt, pariatur id, possimus magnam repudiandae distinctio! Eius, non!</p>
-        <div class="row justify-content-center">
-            <div class="col-md-6 sql">
-<pre><code>                
-    SELECT * FROM customer;  
-</code></pre>
-            
-            </div>
-            </div>
-        
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit porro provident explicabo similique beatae, incidunt corrupti fugiat neque aliquid hic.</p>
+        <p>Below is the output of the above SQL query. We've created a database and a database table in MySQL workbench.</p>
         <div class="row justify-content-center">
          <div class="col-md-6">
              <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture.PNG?v=1587258398240" alt="">
          </div>
          </div>
 
-   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
+   <p>Transite to Node.js, inside Visual Studio Code, a code editor, we’re using the command <strong>npm init -y</strong> to create a package.json file to start with. The -y flag means that npm will use defaults. This step assumes that you have Node and npm installed on your system.</p>
 
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-<pre><code>        
-    npm init --y
+<pre><code>npm init --y
 </code></pre>
     
     </div>
     </div>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
+<p>After that, we’re installing the mysql module from npm and saving it as a project dependency.</p>
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-<pre><code>        
-   npm i mysql
+<pre><code>npm install mysql --save
 </code></pre>
     
     </div>
     </div>
 
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
+    <p>When establishing a connection, you can set the following options:<br>
+        host: The hostname of the database you are connecting to. (Default: localhost)<br>
+        port: The port number to connect to. (Default: 3306)<br>
+        user: The MySQL user. (Default: root)<br>
+        password: The password of user in MySQL.<br>
+        database: Name of the database to use for this connection (Optional).<br>
+    Every method you invoke on a connection is queued and executed in sequence. Closing the connection is done using end().</p>
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-<pre><code>         
-    const mysql = require("mysql");
-    const connection = mysql.createConnection({
-          host: "localhost",
-          port: 3306,
-          user: "root",
-          password: "secret",
-          database: "company_db"
-        });    
-    connection.connect();        
-    connection.query("SELECT * FROM customer", function(err, res) {
-            if (err) throw err;
-            console.log(res);
-        });      
-    connection.end();
+<pre><code>const mysql = require("mysql");
+const connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: "secret",
+        database: "company_db"
+    });    
+connection.connect();        
+connection.query("SELECT * FROM customer", function(err, res) {
+        if (err) throw err;
+        console.log(res);
+    });      
+connection.end();
 </code>
 </pre>
     
     </div>
     </div>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
+    <p>Enter <strong>node app.js</strong> in command line to execute. On successful execution you should be able to see the table output as json format in console.</p>
 
     <div class="row justify-content-center">
         <div class="col-md-6 node">
-<pre><code>        
-    node app.js
+<pre><code>node app.js
 </code></pre>
         
         </div>
