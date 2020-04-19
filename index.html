@@ -34,14 +34,14 @@
 
        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, culpa quis. Obcaecati laboriosam expedita iste nulla laudantium tenetur sapiente dolores accusamus? Molestias exercitationem blanditiis iusto placeat est eaque recusandae, sed corrupti laborum ipsam, dignissimos rem pariatur numquam consectetur! Aut ad quibusdam laudantium dolorum sit animi asperiores deserunt consequatur beatae tempore!</p>
         <div class="row justify-content-center">
-        <div class="col-md-12">
-        
-      <hr>
-                <br><pre>
-                    <span class="colored">DROP DATABASE IF EXISTS</span> company_db;
-                    <span class="colored">CREATE DATABASE</span> company_db;
-                    <span class="colored">USE</span> company_db;
-                </pre>  
+        <div class="col-md-7">
+<pre>
+
+    <span class="colored">DROP DATABASE IF EXISTS</span> company_db;
+    <span class="colored">CREATE DATABASE</span> company_db;
+    <span class="colored">USE</span> company_db;
+
+</pre>  
     
         
         </div>
@@ -52,18 +52,18 @@
  
 
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <hr>
-            <pre>
-              
-                    <span class="colored">CREATE TABLE customer(</span>
-                        Customer_ID <span class="colored">INT(10) AUTO_INCREMENT NOT NULL</span>,
-                        Customer_Name <span class="colored">VARCHAR(50) NOT NULL</span>,
-                        Customer_City <span class="colored">VARCHAR(25)</span>,
-                        Customer_State <span class="colored">VARCHAR(5)</span>,
-                        <span class="colored">PRIMARY KEY</span> (Customer_ID)
-                    );
-            </pre>
+        <div class="col-md-7">
+       
+<pre>        
+    <span class="colored">CREATE TABLE </span>customer(
+    Customer_ID <span class="colored">INT(10) AUTO_INCREMENT NOT NULL</span>,
+    Customer_Name <span class="colored">VARCHAR(50) NOT NULL</span>,
+    Customer_City <span class="colored">VARCHAR(25)</span>,
+    Customer_State <span class="colored">VARCHAR(5)</span>,
+    <span class="colored">PRIMARY KEY</span> (Customer_ID)
+    );
+
+</pre>
             
         </div>
         </div>
@@ -73,34 +73,105 @@
    
 
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <hr>
-            <pre>
+        <div class="col-md-7">
+         
+<pre>
               
-                    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
-                    <span class="colored">VALUES</span> ("Daisy Hamilton", "Albany", "NY"); 
-                    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
-                    <span class="colored">VALUES</span> ("Juan Stone", "New York", "NY");
-                    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
-                    <span class="colored">VALUES</span> ("Celia Byrd", "Chicago", "IL");
-                  
-        </pre>
+    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
+    <span class="colored">VALUES</span> ("Daisy Hamilton", "Albany", "NY"); 
+    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
+    <span class="colored">VALUES</span> ("Juan Stone", "New York", "NY");
+    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
+    <span class="colored">VALUES</span> ("Celia Byrd", "Chicago", "IL");
+
+</pre>
         
         </div>
         </div>
 
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque consequatur illum reiciendis error, odio nostrum nulla deserunt, pariatur id, possimus magnam repudiandae distinctio! Eius, non!</p>
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+             
+<pre>
+                  
+    <span class="colored">SELECT * FROM</span> customer;
+   
+</pre>
+            
+            </div>
+            </div>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit porro provident explicabo similique beatae, incidunt corrupti fugiat neque aliquid hic.</p>
+        <div class="row justify-content-center">
+         <div class="col-md-6">
+             <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture.PNG?v=1587258398240" alt="">
+         </div>
+         </div>
+
    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
 
+   <div class="row justify-content-center">
+    <div class="col-md-7">
+     
+<pre>
+          
+    <span class="colored">SELECT * FROM</span> customer
+    <span class="colored">WHERE</span> Customer_State = "NY";
+
+</pre>
+    
+    </div>
+    </div>
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi doloremque saepe nisi? Blanditiis tempora corporis sequi mollitia iusto libero quam?</p>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture3.PNG?v=1587263388380" alt="">
+    </div>
+    </div>
 
 
 
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+         
+<pre>
+
+    <span class="colored">UPDATE</span> customer
+    <span class="colored">SET</span> Customer_City = "Boston", Customer_State = "MA"
+    <span class="colored">WHERE</span> Customer_Name = "Juan Stone";
+
+</pre>
+
+
+        
+        </div>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture2.PNG?v=1587262514649" alt="">
+            </div>
+            </div>
+        
         </div>
       </div>
     </div>
-
-
-    
     </div>
+
+
+
+
+
+
+
 
     <!-- Footer -->
 <footer class="page-footer font-small blue pt-4 pb-0 mb-0">
