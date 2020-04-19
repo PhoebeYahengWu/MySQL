@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn MySQL Faster and More Efficiently</title>
+    <title>Connect to MySQL database from Node.js</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Playfair+Display:700,400,900,400italic,700italic,900italic|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Anonymous+Pro:400,700,400italic,700italic|Roboto:400,700' />
@@ -21,7 +21,7 @@
     <div id="blog">
       <div id="title">
         <div class="pubdate">18 April 2020<hr/></div>
-        <h1>Learn MySQL Faster and More Efficiently</h1>
+        <h1>Connect to MySQL database from Node.js</h1>
         <div class="byline">by Phoebe Yaheng Wu</div>
       </div>
       
@@ -111,102 +111,79 @@
 
    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
 
-   <div class="row justify-content-center">
+
+<div class="row justify-content-center">
     <div class="col-md-7">
      
 <pre>
           
-    <span class="colored">SELECT * FROM</span> customer
-    <span class="colored">WHERE</span> Customer_State = "NY";
+    <span class="colored">npm init --y</span>
+
+</pre>
+    
+    </div>
+    </div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+     
+<pre>
+          
+    <span class="colored">npm i mysql</span>
 
 </pre>
     
     </div>
     </div>
 
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi doloremque saepe nisi? Blanditiis tempora corporis sequi mollitia iusto libero quam?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
 
 <div class="row justify-content-center">
-    <div class="col-md-6">
-        <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture3.PNG?v=1587263388380" alt="">
+    <div class="col-md-7">
+     
+<pre>
+          
+    <span class="colored">const mysql = require("mysql");
+    const connection = mysql.createConnection({
+          host: "localhost",
+          port: 3306,
+          user: "root",
+          password: "secret",
+          database: "company_db"
+        });    
+    connection.connect();        
+    connection.query("SELECT * FROM customer", function(err, res) {
+            if (err) throw err;
+            console.log(res);
+        });      
+    connection.end();</span>
+
+</pre>
+    
     </div>
     </div>
-
-
-
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
 
     <div class="row justify-content-center">
         <div class="col-md-7">
          
-<pre>
-
-    <span class="colored">UPDATE</span> customer
-    <span class="colored">SET</span> Customer_City = "Boston", Customer_State = "MA"
-    <span class="colored">WHERE</span> Customer_Name = "Juan Stone";
+<pre>          
+    <span class="colored">node app</span> 
 
 </pre>
-
-
         
         </div>
         </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, possimus molestiae porro quasi distinctio maxime deleniti labore maiores deserunt facilis quidem ad voluptatibus, molestias exercitationem!</p>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
-
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture2.PNG?v=1587262514649" alt="">
-            </div>
-            </div>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus ducimus expedita a consequuntur vero earum. Beatae ipsam dolor illo, sequi ut totam nostrum perspiciatis!</p>
-        
-        <div class="row justify-content-center">
-            <div class="col-md-7">
-             
-<pre> 
-    <span class="colored">SELECT * FROM</span> customer
-    <span class="colored">WHERE</span> Customer_State <span class="colored">IN</span> ("NY", "MA");
-
-</pre>
-    
-    
-            
-            </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
-
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture4.PNG?v=1587264792984" alt="">
-                </div>
-                </div>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus ducimus expedita a consequuntur vero earum. Beatae ipsam dolor illo, sequi ut totam nostrum perspiciatis!</p>
-        
-                <div class="row justify-content-center">
-                    <div class="col-md-7">
-                     
-<pre> 
-    <span class="colored">SELECT * FROM</span> customer
-    <span class="colored">WHERE</span> Customer_Name <span class="colored">LIKE</span> 'Ju%';
-
-</pre>
-            
-            
-                    
-                    </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem atque aliquam ut, voluptate fugit mollitia eveniet dolorem dolor enim omnis ullam provident quasi accusantium itaque distinctio eos alias rem praesentium numquam, magnam amet obcaecati error ratione esse? Cum sit doloribus tenetur temporibus veniam impedit aspernatur cupiditate suscipit nisi? Nostrum, rerum?</p>
-        
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture5.PNG?v=1587265759475" alt="">
-                        </div>
-                        </div>
-
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture6.PNG?v=1587270470085" alt="">
+        </div>
+        </div>
 
         </div>
       </div>
@@ -227,7 +204,7 @@
     <div class="footer-copyright text-center mb-0 pb-0">
       
         
-        List of programming languages. (2020, April 7). In Wikipedia. Retrieved from <a href="https://en.wikipedia.org/w/index.php?title=List_of_programming_languages&oldid=949539501">wikipedia.org</a>
+        mysql. (2020, Jan 19). npm Documentation. Retrieved from <a href="https://www.npmjs.com/package/mysql">npmjs.com</a>
     </div>
     <!-- Copyright -->
   

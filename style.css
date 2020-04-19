@@ -120,3 +120,8 @@ body {
       background-color: #FCF6EE;
   }
 
+  @media only screen and (max-width: 768px) {
+    pre {
+        font-size: 60%;
+    }
+  }
