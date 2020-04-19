@@ -82,11 +82,11 @@ VALUES ("Celia Byrd", "Chicago", "IL");<hr>SELECT * FROM customer;</code></pre>
     </div>
 
 
-    <p>When establishing a connection, you can set the following options:<br>
+    <p>First of all we need to require mysql module. Then we need to create connection to MySQL database. We are going to pass an object as function parameter. The object will contain the host, i.e. basically your database IP or domain name or localhost if we are trying to connect to our local database. Now, the user and password will be the username and password of your database which is used to log into your MySQL database. The database will be the name of the database we want to access. and Port by default is 3306 for MySQL. When establishing connection, you can set the following options:<br>
         host: The hostname of the database you are connecting to. (Default: localhost)<br>
         port: The port number to connect to. (Default: 3306)<br>
-        user: The MySQL user. (Default: root)<br>
-        password: The password of user in MySQL.<br>
+        user: The MySQL user. (Default: root if you didn't specifically set)<br>
+        password: The password of the user in MySQL.<br>
         database: Name of the database to use for this connection (Optional).<br>
     Every method you invoke on a connection is queued and executed in sequence. Closing the connection is done using end().</p>
 
@@ -121,7 +121,7 @@ connection.end();
         
         </div>
         </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, possimus molestiae porro quasi distinctio maxime deleniti labore maiores deserunt facilis quidem ad voluptatibus, molestias exercitationem!</p>
+    <p>Below is the output.</p>
 
     <div class="row justify-content-center">
         <div class="col-md-6">
