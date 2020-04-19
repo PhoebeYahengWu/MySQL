@@ -108,3 +108,22 @@ body {
   .source {
       font-size: smaller;
   }
+
+  .colored {
+      color: #1E90FF;
+  }
+
+  pre {
+      margin: 0;
+      padding: 0;
+      overflow: hidden !important;
+  }
+
+  hr {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
