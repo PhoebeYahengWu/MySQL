@@ -83,13 +83,13 @@ body {
   }
       
   
-  p:first-child:first-letter { 
+  /* p:first-child:first-letter { 
         font-weight: 900;
         float: left; 
         font-size: 5em; 
         line-height: 1em; 
         padding: 0.1em 0.1em 0.1em 0em; 
-  }
+  } */
     
   
   blockquote{
@@ -121,13 +121,13 @@ body {
   }
 
 
-  .sql {
+  /* .sql {
     background-color: #FCF6EE;
   }
 
   .node {
     background-color: #f0f0f0;
-  }
+  } */
 
 
   @media only screen and (max-width: 768px) {

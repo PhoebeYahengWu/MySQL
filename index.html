@@ -32,16 +32,15 @@
       <div id="article">
         <div id="content">
 
-       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, culpa quis. Obcaecati laboriosam expedita iste nulla laudantium tenetur sapiente dolores accusamus? Molestias exercitationem blanditiis iusto placeat est eaque recusandae, sed corrupti laborum ipsam, dignissimos rem pariatur numquam consectetur! Aut ad quibusdam laudantium dolorum sit animi asperiores deserunt consequatur beatae tempore!</p>
+       <p>If you’ve arrived here looking for a quick way to get up and running with MySQL in Node.js, I’ve got you covered! The first thing is to create a database and a database table to work with in MySQL workbench.</p>
         <div class="row justify-content-center">
            
         <div class="col-md-6 sql">
-<pre>
-
-    <span class="colored">DROP DATABASE IF EXISTS</span> company_db;
-    <span class="colored">CREATE DATABASE</span> company_db;
-    <span class="colored">USE</span> company_db;
-
+<pre><code>
+    DROP DATABASE IF EXISTS company_db;
+    CREATE DATABASE company_db;
+    USE company_db;
+</code>
 </pre>  
     
         
@@ -54,15 +53,14 @@
 
     <div class="row justify-content-center">
         <div class="col-md-6 sql">
-<pre>        
-    <span class="colored">CREATE TABLE </span>customer(
-    Customer_ID <span class="colored">INT(10) AUTO_INCREMENT NOT NULL</span>,
-    Customer_Name <span class="colored">VARCHAR(50) NOT NULL</span>,
-    Customer_City <span class="colored">VARCHAR(25)</span>,
-    Customer_State <span class="colored">VARCHAR(5)</span>,
-    <span class="colored">PRIMARY KEY</span> (Customer_ID)
-    );
-
+<pre><code>
+    CREATE TABLE customer(
+    Customer_ID INT(10) AUTO_INCREMENT NOT NULL,
+    Customer_Name VARCHAR(50) NOT NULL,
+    Customer_City VARCHAR(25),
+    Customer_State VARCHAR(5),
+    PRIMARY KEY (Customer_ID)
+    );</code> 
 </pre>
             
         </div>
@@ -74,16 +72,14 @@
 
     <div class="row justify-content-center">
         <div class="col-md-6 sql">
-<pre>
-              
-    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
-    <span class="colored">VALUES</span> ("Daisy Hamilton", "Albany", "NY"); 
-    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
-    <span class="colored">VALUES</span> ("Juan Stone", "New York", "NY");
-    <span class="colored">INSERT INTO</span> customer (Customer_Name, Customer_City, Customer_State)
-    <span class="colored">VALUES</span> ("Celia Byrd", "Chicago", "IL");
-
-</pre>
+<pre><code>             
+    INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
+    VALUES ("Daisy Hamilton", "Albany", "NY"); 
+    INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
+    VALUES ("Juan Stone", "New York", "NY");
+    INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
+    VALUES ("Celia Byrd", "Chicago", "IL");
+</code></pre>
         
         </div>
         </div>
@@ -91,11 +87,9 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque consequatur illum reiciendis error, odio nostrum nulla deserunt, pariatur id, possimus magnam repudiandae distinctio! Eius, non!</p>
         <div class="row justify-content-center">
             <div class="col-md-6 sql">
-<pre>
-                  
-    <span class="colored">SELECT * FROM</span> customer;
-   
-</pre>
+<pre><code>                
+    SELECT * FROM customer;  
+</code></pre>
             
             </div>
             </div>
@@ -112,11 +106,9 @@
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-<pre>
-          
+<pre><code>        
     npm init --y
-
-</pre>
+</code></pre>
     
     </div>
     </div>
@@ -124,11 +116,9 @@
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-<pre>
-          
+<pre><code>        
    npm i mysql
-
-</pre>
+</code></pre>
     
     </div>
     </div>
@@ -138,7 +128,7 @@
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-<pre><code class="javascript">         
+<pre><code>         
     const mysql = require("mysql");
     const connection = mysql.createConnection({
           host: "localhost",
@@ -163,10 +153,9 @@
 
     <div class="row justify-content-center">
         <div class="col-md-6 node">
-<pre>          
+<pre><code>        
     node app.js
-
-</pre>
+</code></pre>
         
         </div>
         </div>
