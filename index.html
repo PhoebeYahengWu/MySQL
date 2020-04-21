@@ -32,7 +32,8 @@
       <div id="article">
         <div id="content">
 
-       <p>If you’ve arrived here looking for a quick way to get up and running with MySQL in Node.js, I’ve got you covered! The first thing is to create a database and a database table to work with in MySQL workbench.</p>
+       <p>If you're looking to connect your Node.js application with MySQL database easily and quickly, you are in the right place. We just need to complete two steps: one is to create a table in MySQL; the other is to paste some codes in the entry file of your Node.js application.</p>
+       <p>Let’s start with MySQL. The syntax below illustrates the process of creating a database called "company_db" and a table named "customer" with each column specified. Then we insert some values into the table, row by row. Lastly, we retrieve the table. That is all we need for the MySQL part.</p>
        <div class="row justify-content-center">
         <div class="col-md-6">
 <pre><code>DROP DATABASE IF EXISTS company_db;
@@ -54,24 +55,24 @@ VALUES ("Celia Byrd", "Chicago", "IL");<hr>SELECT * FROM customer;</code></pre>
        
 
         
-        <p>Below is the output of the above SQL query. We've created a database and a database table in MySQL workbench.</p>
+        <p>Below is the output of the above SQL query. We've created a database and a table in the MySQL workbench successfully. Yay!</p>
         <div class="row justify-content-center">
          <div class="col-md-6">
              <img class="mb-3" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture.PNG?v=1587258398240" alt="">
          </div>
          </div>
 
-   <p>Transite to Node.js, inside Visual Studio Code, a code editor, we’re using the command <strong>npm init -y</strong> to create a package.json file to start with. The -y flag means that npm will use defaults. This step assumes that you have Node and npm installed on your system.</p>
+   <p>Now, let’s transition to the Node.js part and connecting it to the table we just created. First of all, open Visual Studio Code, a code editor, and then use the shortcut "Ctrl + ~" to display the integrated terminal. Assuming you’ve already installed Node.js, type "npm init -y" in the terminal to create a package.json file. The -y flag will allow you to accept all default settings.</p>
 
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
-<pre><code>npm init --y
+<pre><code>npm init -y
 </code></pre>
     
     </div>
     </div>
-<p>After that, we’re installing the mysql module from npm and saving it as a project dependency.</p>
+<p>Next, we will install the mysql module from npm and save it in the dependencies list within the package.json by typing "npm install mysql --save" in the terminal.</p>
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
@@ -82,13 +83,7 @@ VALUES ("Celia Byrd", "Chicago", "IL");<hr>SELECT * FROM customer;</code></pre>
     </div>
 
 
-    <p>First of all we need to require mysql module. Then we need to create connection to MySQL database. We are going to pass an object as function parameter. The object will contain the host, i.e. basically your database IP or domain name or localhost if we are trying to connect to our local database. Now, the user and password will be the username and password of your database which is used to log into your MySQL database. The database will be the name of the database we want to access. and Port by default is 3306 for MySQL. When establishing connection, you can set the following options:<br>
-        host: The hostname of the database you are connecting to. (Default: localhost)<br>
-        port: The port number to connect to. (Default: 3306)<br>
-        user: The MySQL user. (Default: root if you didn't specifically set)<br>
-        password: The password of the user in MySQL.<br>
-        database: Name of the database to use for this connection (Optional).<br>
-    Every method you invoke on a connection is queued and executed in sequence. Closing the connection is done using end().</p>
+    <p>After that, we will create a new file as our entry file, which is commonly named app.js. For our next step, all we need to do is copy the syntax below to the app.js file.</p>
 
 <div class="row justify-content-center">
     <div class="col-md-6 node">
@@ -112,8 +107,9 @@ connection.end();
     </div>
     </div>
 
-    <p>Enter <strong>node app.js</strong> in command line to execute. On successful execution you should be able to see the table output as json format in console.</p>
+    <p>Below is the explanation of the above syntax. We import the mysql module in order to use it. Then we create a configuration object so that we can connect to MySQL database.  The object contains the host (i.e. database IP, domain name, localhost, if you are trying to connect to your local database). The port by default is 3306 for MySQL. The user and the password are the same credentials you used when you created the database in MySQL workbench. Now you use the name of the database you are trying to connect. After creating the configuration object, we apply the connect method to actually connect. Then we use the query method to read MySQL table. Lastly, we use the end method to close the connection.</p>
 
+    <p>The very last step is to enter "node app.js" in the command line to execute the program. If the execution is successful, you should be able to see the table output as json format in your node.js application. </p>
     <div class="row justify-content-center">
         <div class="col-md-6 node">
 <pre><code>node app.js
@@ -121,7 +117,7 @@ connection.end();
         
         </div>
         </div>
-    <p>Below is the output.</p>
+    <p>Below is the output from Node.js application. Hope it helps!</p>
 
     <div class="row justify-content-center">
         <div class="col-md-6">
