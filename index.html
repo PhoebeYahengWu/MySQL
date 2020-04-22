@@ -32,8 +32,8 @@
       <div id="article">
         <div id="content">
 
-       <p>If you're looking to connect your Node.js application with MySQL database easily and quickly, you are in the right place. We just need to complete two steps: one is to create a table in MySQL; the other is to paste some codes in the entry file of your Node.js application.</p>
-       <p>Let’s start with MySQL. The syntax below illustrates the process of creating a database called "company_db" and a table named "customer" with each column specified. Then we insert some values into the table, row by row. Lastly, we retrieve the table. That is all we need for the MySQL part.</p>
+       <p>If you're looking to connect your Node.js application with MySQL database easily and quickly, you're in the right place. All we need to complete are just two steps: one is to create a table in MySQL; the other is to paste some codes in the entry file of your Node.js application. Not too hard, huh?</p>
+       <p>So, let’s start with MySQL. The syntax below illustrates the process of creating a database called "company_db" and a table named "customer" with each column specified. Then we insert some values into the table, row by row. So far, we've successfully created a database and a table in the MySQL workbench. Yay!</p>
        <div class="row justify-content-center">
         <div class="col-md-6">
 <pre><code>DROP DATABASE IF EXISTS company_db;
@@ -49,20 +49,28 @@ VALUES ("Daisy Hamilton", "Albany", "NY");
 INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
 VALUES ("Juan Stone", "New York", "NY");            
 INSERT INTO customer (Customer_Name, Customer_City, Customer_State)
-VALUES ("Celia Byrd", "Chicago", "IL");<hr>SELECT * FROM customer;</code></pre>
+VALUES ("Celia Byrd", "Chicago", "IL");</code></pre>
         </div>
         </div>
        
 
         
-        <p>Below is the output of the above SQL query. We've created a database and a table in the MySQL workbench successfully. Yay!</p>
+        <p>Now, we can read the table and see how it looks using the one-line syntax provided below.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 node">
+        <pre><code>SELECT * FROM customer;</code></pre>
+            
+            </div>
+            </div>
+        <p>Ta-Da! Here's the output table.</p>
         <div class="row justify-content-center">
          <div class="col-md-6">
              <img class="mb-3" width="100%" src="https://cdn.glitch.com/f28949c6-6f44-4abb-a9a1-6a9e90371a91%2FCapture.PNG?v=1587258398240" alt="">
          </div>
          </div>
 
-   <p>Now, let’s transition to the Node.js part and connecting it to the table we just created. First of all, open Visual Studio Code, a code editor, and then use the shortcut "Ctrl + ~" to display the integrated terminal. Assuming you’ve already installed Node.js, type "npm init -y" in the terminal to create a package.json file. The -y flag will allow you to accept all default settings.</p>
+   <p>Now, let’s transition to the Node.js part and connecting it to the table we just created. First of all, open Visual Studio Code, a code editor, then use the shortcut "Ctrl + ~" to display the integrated terminal. Assuming you’ve already installed Node.js, type "npm init -y" in the terminal to create a package.json file. The -y flag will allow you to accept all default settings so we don’t have to press "Enter" again and again.</p>
 
 
 <div class="row justify-content-center">
@@ -107,10 +115,10 @@ connection.end();
     </div>
     </div>
 
-    <p>Below is the explanation of the above syntax. We import the mysql module in order to use it. Then we create a configuration object so that we can connect to MySQL database.  The object contains the host (i.e. database IP, domain name, localhost, if you are trying to connect to your local database). The port by default is 3306 for MySQL. The user and the password are the same credentials you used when you created the database in MySQL workbench. Now you use the name of the database you are trying to connect. After creating the configuration object, we apply the connect method to actually connect. Then we use the query method to read MySQL table. Lastly, we use the end method to close the connection.</p>
+    <p>Need some explanation of the above syntax? No problem. First of all, we import the mysql module in order to use it. Then we create a configuration object so that we can connect to MySQL database. The object contains the host (i.e. database IP, domain name, localhost, if you are trying to connect to your local database). The port by default is 3306 for MySQL. The user and the password are the same credentials you used when you created the database in MySQL workbench. Now you enter the name of the database you are trying to connect. After creating the configuration object, we apply the connect method to actually connect. Then we use the query method to read MySQL table. Lastly, we use the end method to close the connection.</p>
 
-    <p>The very last step is to enter "node app.js" in the command line to execute the program. If the execution is successful, you should be able to see the table output as json format in your node.js application. </p>
-    <div class="row justify-content-center">
+    <p>The very last step is to enter "node app.js" in the command line to execute the program. If the execution is successful, you should be able to see the table output as json format in your node.js application.</p>
+    <div class="row justify-content-center"> 
         <div class="col-md-6 node">
 <pre><code>node app.js
 </code></pre>
